@@ -16,7 +16,7 @@
   \********************/
 /***/ (() => {
 
-eval("{\n// task_0/js/main.ts\nvar student1 = {\n    firstName: \"John\",\n    lastName: \"Doe\",\n    age: 22,\n    location: \"Accra\",\n};\nvar student2 = {\n    firstName: \"Jane\",\n    lastName: \"Smith\",\n    age: 25,\n    location: \"Kumasi\",\n};\nvar studentsList = [student1, student2];\n// Create a table and append to body\nvar table = document.createElement(\"table\");\nvar tbody = document.createElement(\"tbody\");\nstudentsList.forEach(function (student) {\n    var row = document.createElement(\"tr\");\n    var nameCell = document.createElement(\"td\");\n    nameCell.textContent = student.firstName;\n    var locationCell = document.createElement(\"td\");\n    locationCell.textContent = student.location;\n    row.appendChild(nameCell);\n    row.appendChild(locationCell);\n    tbody.appendChild(row);\n});\ntable.appendChild(tbody);\ndocument.body.appendChild(table);\n\n\n//# sourceURL=webpack://task_0/./js/main.ts?\n}");
+eval("{\n// task_1/js/main.ts\n// Example usage\nvar teacher1 = {\n    firstName: \"John\",\n    lastName: \"Doe\",\n    fullTimeEmployee: true,\n    location: \"London\",\n};\nvar teacher2 = {\n    firstName: \"Mary\",\n    lastName: \"Ann\",\n    fullTimeEmployee: false,\n    location: \"Paris\",\n    yearsOfExperience: 10,\n    contract: true, // extra property allowed\n};\nconsole.log(teacher1);\nconsole.log(teacher2);\n\n\n//# sourceURL=webpack://task_1/./js/main.ts?\n}");
 
 /***/ })
 
