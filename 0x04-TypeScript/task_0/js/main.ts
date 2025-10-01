@@ -1,5 +1,3 @@
-// task_0/js/main.ts
-
 interface Student {
   firstName: string;
   lastName: string;
@@ -7,23 +5,25 @@ interface Student {
   location: string;
 }
 
+// Create two students
 const student1: Student = {
-  firstName: "John",
-  lastName: "Doe",
+  firstName: "Julius",
+  lastName: "McDon",
   age: 22,
-  location: "Accra",
+  location: "Accra"
 };
 
 const student2: Student = {
-  firstName: "Jane",
-  lastName: "Smith",
-  age: 25,
-  location: "Kumasi",
+  firstName: "Ama",
+  lastName: "Kusi",
+  age: 24,
+  location: "Kumasi"
 };
 
+// Store in array
 const studentsList: Student[] = [student1, student2];
 
-// Create a table and append to body
+// Render table
 const table = document.createElement("table");
 const tbody = document.createElement("tbody");
 
