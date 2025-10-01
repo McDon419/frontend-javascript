@@ -1,3 +1,4 @@
+// Define Student interface
 interface Student {
   firstName: string;
   lastName: string;
@@ -7,39 +8,54 @@ interface Student {
 
 // Create two students
 const student1: Student = {
-  firstName: "Julius",
-  lastName: "McDon",
-  age: 22,
-  location: "Accra"
+  firstName: "John",
+  lastName: "Doe",
+  age: 20,
+  location: "New York",
 };
 
 const student2: Student = {
-  firstName: "Ama",
-  lastName: "Kusi",
-  age: 24,
-  location: "Kumasi"
+  firstName: "Jane",
+  lastName: "Smith",
+  age: 22,
+  location: "Los Angeles",
 };
 
-// Store in array
+// Put them into an array
 const studentsList: Student[] = [student1, student2];
 
-// Render table
-const table = document.createElement("table");
-const tbody = document.createElement("tbody");
+// Create table element
+const table: HTMLTableElement = document.createElement("table");
 
-studentsList.forEach((student) => {
-  const row = document.createElement("tr");
+// Create table header
+const thead: HTMLTableSectionElement = table.createTHead();
+const headerRow: HTMLTableRowElement = thead.insertRow();
 
-  const nameCell = document.createElement("td");
-  nameCell.textContent = student.firstName;
-
-  const locationCell = document.createElement("td");
-  locationCell.textContent = student.location;
-
-  row.appendChild(nameCell);
-  row.appendChild(locationCell);
-  tbody.appendChild(row);
+const headers: string[] = ["First Name", "Last Name", "Age", "Location"];
+headers.forEach((headerText) => {
+  const th: HTMLTableCellElement = document.createElement("th");
+  th.textContent = headerText;
+  headerRow.appendChild(th);
 });
 
-table.appendChild(tbody);
+// Create table body and add student rows
+const tbody: HTMLTableSectionElement = table.createTBody();
+
+studentsList.forEach((student: Student) => {
+  const row: HTMLTableRowElement = tbody.insertRow();
+
+  const cellFirstName: HTMLTableCellElement = row.insertCell();
+  cellFirstName.textContent = student.firstName;
+
+  const cellLastName: HTMLTableCellElement = row.insertCell();
+  cellLastName.textContent = student.lastName;
+
+  const cellAge: HTMLTableCellElement = row.insertCell();
+  cellAge.textContent = student.age.toString();
+
+  const cellLocation: HTMLTableCellElement = row.insertCell();
+  cellLocation.textContent = student.location;
+});
+
+// Append table to body
 document.body.appendChild(table);
